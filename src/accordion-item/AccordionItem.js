@@ -8,7 +8,7 @@ import Heading from './components/Heading';
 import Content from './components/Content';
 
 const AccordionItem = ({
-    animationDuration = 5000,
+    animationDuration = 300,
     animationEasing = 'ease-in-out',
     children,
     itemContainerClassName,
