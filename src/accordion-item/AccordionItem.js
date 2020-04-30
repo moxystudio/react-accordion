@@ -8,7 +8,7 @@ import Heading from './components/Heading';
 import Content from './components/Content';
 
 const AccordionItem = ({
-    animationDuration,
+    animationDuration = 5000,
     animationEasing,
     children,
     itemContainerClassName,
@@ -19,9 +19,9 @@ const AccordionItem = ({
     iconClassName,
     icon,
     index,
-    isActive,
-    onItemToggle,
-    scrollIntoView,
+    isActive = false,
+    onItemToggle = () => null,
+    scrollIntoView = false,
     toggleItemActive,
     title,
 }) => {
@@ -30,7 +30,7 @@ const AccordionItem = ({
 
     useEffect(() => {
         if (wasActive !== isActive && typeof wasActive !== 'undefined') {
-            onItemToggle && onItemToggle(index, { active: isActive });
+            onItemToggle(index, { active: isActive });
         }
     }, [index, isActive, onItemToggle, wasActive]);
 
@@ -72,11 +72,6 @@ const AccordionItem = ({
 };
 
 AccordionItem.propTypes = {
-    /* Accordion */
-    index: PropTypes.number,
-    isActive: PropTypes.bool,
-    toggleItemActive: PropTypes.func,
-    /* AccordionItem */
     animationDuration: PropTypes.number,
     animationEasing: PropTypes.string,
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
@@ -90,12 +85,10 @@ AccordionItem.propTypes = {
     onItemToggle: PropTypes.func,
     scrollIntoView: PropTypes.bool,
     title: PropTypes.any.isRequired,
-};
-
-AccordionItem.defaultProps = {
-    animationDuration: 300,
-    animationEasing: 'ease-in-out',
-    isActive: false,
+    /* Accordion */
+    index: PropTypes.number,
+    isActive: PropTypes.bool,
+    toggleItemActive: PropTypes.func,
 };
 
 export default AccordionItem;

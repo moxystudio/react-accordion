@@ -40,19 +40,6 @@ const Accordion = ({ children, className, closedClassName, defaultActiveItems, o
 };
 
 Accordion.propTypes = {
-    /* AccordionItem props */
-    animationDuration: PropTypes.number,
-    animationEasing: PropTypes.string,
-    itemContainerClassName: PropTypes.string,
-    headingContainerClassName: PropTypes.string,
-    titleContainerClassName: PropTypes.string,
-    contentContainerClassName: PropTypes.string,
-    contentClassName: PropTypes.string,
-    icon: PropTypes.any,
-    iconClassName: PropTypes.string,
-    onItemToggle: PropTypes.func,
-    scrollIntoView: PropTypes.bool,
-    /* Accordion */
     children: PropTypes.node.isRequired,
     className: PropTypes.string,
     closedClassName: PropTypes.string,
@@ -69,11 +56,22 @@ Accordion.propTypes = {
             return new Error('Accordion prop "multiple" is not set or set as false but "defaultActiveItems" has more than one item.');
         }
     },
+    /* AccordionItem props */
+    animationDuration: PropTypes.number,
+    animationEasing: PropTypes.string,
+    itemContainerClassName: PropTypes.string,
+    headingContainerClassName: PropTypes.string,
+    titleContainerClassName: PropTypes.string,
+    contentContainerClassName: PropTypes.string,
+    contentClassName: PropTypes.string,
+    icon: PropTypes.any,
+    iconClassName: PropTypes.string,
+    onItemToggle: PropTypes.func,
+    scrollIntoView: PropTypes.bool,
 };
 
 Accordion.defaultProps = {
     multiple: false,
-    scrollIntoView: false,
     defaultActiveItems: [],
     onItemToggling: () => null,
 };

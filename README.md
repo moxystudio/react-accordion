@@ -48,6 +48,20 @@ const MyComponent = () => {
 }
 ```
 
+To import a stylesheet, one can import it on the project's entry CSS file:
+
+```css
+/* src/index.css */
+@import "@moxy/react-accordion/dist/index.css";
+```
+
+Or in the project's entry JavaScript file:
+
+```js
+/* src/index.js */
+import "@moxy/react-accordion/dist/index.css";
+```
+
 ## API
 
 These are the props available in [`@moxy/react-accordion`](https://github.com/moxystudio/react-accordion).
@@ -113,8 +127,9 @@ Example with function:
 </AccordionItem>
 ```
 
-> ⚠️ All the following props can be defined at the `Accordion` level for the cases you want a specific prop to be the same for all the items.
-> Keep in mind that if you define the same prop in both `Accordion` and `AccordionItem` the one that will be used is the `AccordionItem` one.
+> ⚠️ All the following props can be defined at the `Accordion` level whenever you want a specific prop to be the same for all accordion items.
+>
+> Keep in mind that if you define a prop in `Accordion` and in an `AccordionItem`, the one that will be used is the `AccordionItem` one.
 
 #### animationDuration
 
@@ -169,22 +184,6 @@ A className to apply to the icon container.
 Type: `any` | Required: `false`
 
 The content of the icon.
-
-## Styles
-
-To import a stylesheet, one can import it on the project's entry CSS file:
-
-```css
-/* src/index.css */
-@import "@moxy/react-accordion/dist/index.css";
-```
-
-Or in the project's entry JavaScript file:
-
-```js
-/* src/index.js */
-import "@moxy/react-accordion/dist/index.css";
-```
 
 ## Tests
 
