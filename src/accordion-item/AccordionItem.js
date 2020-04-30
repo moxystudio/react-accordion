@@ -9,7 +9,7 @@ import Content from './components/Content';
 
 const AccordionItem = ({
     animationDuration = 5000,
-    animationEasing,
+    animationEasing = 'ease-in-out',
     children,
     itemContainerClassName,
     headingContainerClassName,
