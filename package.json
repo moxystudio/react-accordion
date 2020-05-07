@@ -1,6 +1,6 @@
 {
   "name": "@moxy/react-accordion",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A react component that renders an accordion with accessible navigation.",
   "main": "lib/index.js",
   "module": "es/index.js",
