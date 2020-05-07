@@ -1,3 +1,13 @@
-.newComponent {
-    border: 1px solid red;
+.home {
+    & .accordion {
+        width: 50vw;
+    }
+
+    & .description {
+        padding: 1rem;
+    }
+
+    & .title {
+        color: blue;
+    }
 }
